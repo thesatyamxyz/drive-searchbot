@@ -176,9 +176,9 @@ class GoogleDriveHelper:
 
         for content in self.telegraph_content :
             self.path.append(Telegraph(access_token=telegraph_token).create_page(
-                                                    title = 'Drive Search',
-                                                    author_name='drive-searchbot',
-                                                    author_url='https://github.com/breakdowns/drive-searchbot',
+                                                    title = 'Drive Search 🔎',
+                                                    author_name='The-Satyam',
+                                                    author_url='https://github.com/thesatyamxyz/drive-searchbot',
                                                     html_content=content
                                                     )['path'])
 
@@ -188,6 +188,6 @@ class GoogleDriveHelper:
 
         msg = f"<b>Search Results For</b> <code>{fileName}</code>"
         buttons = button_builder.ButtonMaker()
-        buttons.buildbutton("VIEW", f"https://telegra.ph/{self.path[0]}")
+        buttons.buildbutton("🔎 Click Here For Result", f"https://telegra.ph/{self.path[0]}")
 
         return msg, InlineKeyboardMarkup(buttons.build_menu(1))
